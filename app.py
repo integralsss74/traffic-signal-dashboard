@@ -56,24 +56,22 @@ st.markdown("---")
 # Load Datasets
 @st.cache_data
 def load_data():
-    detections = pd.read_csv("traffic_detections_log.csv", parse_dates=["timestamp"])
-    perf = pd.read_csv("signal_performance_comparison.csv")
     with open("dashboard_summary.json", "r") as f:
         summary = json.load(f)
-    return detections, perf, summary
+    return summary
 
 try:
-    detections, perf, summary = load_data()
+    summary = load_data()
 except Exception as e:
-    st.error(f"Error loading files: {e}. Please make sure dataset CSV files exist in the working directory.")
+    st.error(f"Error loading files: {e}. Please make sure dashboard_summary.json exists in the working directory.")
     st.stop()
 
 # Sidebar options
 st.sidebar.header("⚙️ Dashboard Controls")
 controller_choice = st.sidebar.multiselect(
     "Filter Controller Types",
-    options=perf["controller_type"].unique(),
-    default=perf["controller_type"].unique()
+    options=["Static Fixed", "RL Dynamic"],
+    default=["Static Fixed", "RL Dynamic"]
 )
 
 # Top KPIs
