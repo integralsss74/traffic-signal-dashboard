@@ -1,5 +1,7 @@
 # AI Dynamic Traffic Signal Control Analytics
 
+🔗 **[Live Demo – AI Dynamic Traffic Signal Control Analytics](https://renewableenergy-k8yvuopocfedbjgdekuocw.streamlit.app)** 
+
 This project is a data analytics and A/B testing case study for an intelligent traffic signal system. It compares a static fixed-time traffic light controller against a reinforcement-learning-based dynamic controller and presents the results through statistical analysis, computer vision traffic logs, environmental impact estimates, and an interactive dashboard.
 
 The goal is to show how AI-driven signal timing can reduce congestion, improve vehicle throughput, and lower emissions at an urban intersection.
